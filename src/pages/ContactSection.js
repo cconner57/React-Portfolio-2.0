@@ -39,7 +39,7 @@ const ContactSection = () => {
 			if (xhr.readyState !== XMLHttpRequest.DONE) return;
 			if (xhr.status === 200) {
 				form.reset();
-			} 
+			}
 		};
 		xhr.send(data);
 		setIsSubmitted(true);
@@ -272,10 +272,10 @@ const Message = styled(Contact)`
 
 	@keyframes fade {
 		from {
-			opacity: 0
+			opacity: 0;
 		}
 		to {
-			opacity: 1
+			opacity: 1;
 		}
 	}
-}
+`;
