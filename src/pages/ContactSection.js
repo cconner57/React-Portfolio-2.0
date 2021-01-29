@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import emailjs from 'emailjs-com';
 
 import SectionTitle from '../components/SectionTitle';
 import Glass from '../components/Glass';
@@ -22,26 +23,37 @@ const ContactSection = () => {
 	const [form, setForm] = useState({ name: '', email: '', message: '' });
 	const [element, controls] = useScroll();
 
-	const { register, errors } = useForm();
+	const { register, handleSubmit, errors } = useForm();
 
 	const handleChange = (e) => {
 		setForm({ ...form, [e.target.name]: e.target.value });
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		const form = e.target;
-		const data = new FormData(form);
-		const xhr = new XMLHttpRequest();
-		xhr.open(form.method, form.action);
-		xhr.setRequestHeader('Accept', 'application/json');
-		xhr.onreadystatechange = () => {
-			if (xhr.readyState !== XMLHttpRequest.DONE) return;
-			if (xhr.status === 200) {
-				form.reset();
-			}
-		};
-		xhr.send(data);
+	const formHandler = () => {
+		try {
+			let templateParams = {
+				name: form.name,
+				email: form.email,
+				message: form.message,
+			};
+			emailjs
+				.send(
+					'service_nltgfcr',
+					'template_51ckd9k',
+					templateParams,
+					'user_f3DauivAi5VTbaLdtvUKS'
+				)
+				.then(
+					function (response) {
+						console.log('SUCCESS!', response.status, response.text);
+					},
+					function (error) {
+						console.log('FAILED...', error);
+					}
+				);
+		} catch (error) {
+			console.log(error);
+		}
 		setIsSubmitted(true);
 	};
 
@@ -55,11 +67,7 @@ const ContactSection = () => {
 			<SectionTitle>Contact</SectionTitle>
 			{!isSubmitted && (
 				<Contact>
-					<form
-						autoComplete='on'
-						onSubmit={handleSubmit}
-						action='https://formspree.io/mvorpvwb'
-						method='POST'>
+					<form autoComplete='on' onSubmit={(e) => e.preventDefault()}>
 						<h1>Contact Me</h1>
 						<div>
 							<User size={40} />
@@ -123,7 +131,7 @@ const ContactSection = () => {
 								)}
 							</FormInput>
 						</div>
-						<button>
+						<button onClick={handleSubmit(formHandler)}>
 							Send
 							<PaperPlaneTilt size={38} color={color.altText} />
 						</button>
