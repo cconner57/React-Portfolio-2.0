@@ -262,8 +262,20 @@ const FormInput = styled.div`
 const Message = styled(Contact)`
 	min-height: 55vh;
 	min-width: auto;
+	img {
+		transition: fade 1s ease;
+	}
 	p {
 		margin: 2rem 0 4rem;
 		font-size: 2.5rem;
 	}
-`;
+
+	@keyframes fade {
+		from {
+			opacity: 0
+		}
+		to {
+			opacity: 1
+		}
+	}
+}
