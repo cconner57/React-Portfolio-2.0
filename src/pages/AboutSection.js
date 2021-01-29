@@ -145,7 +145,7 @@ const Introduction = styled.div`
 		h2 {
 			width: 20rem;
 			height: 13rem;
-			padding: 0 1.7rem;
+			padding: 0 1.5rem;
 			font-size: clamp(1.5rem, 1.5vw, 2rem);
 			user-select: none;
 		}
