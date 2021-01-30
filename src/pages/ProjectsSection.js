@@ -135,8 +135,7 @@ const Technology = styled(Glass)`
 	display: flex;
 	flex-direction: row;
 	border-radius: 10px;
-	@media (max-width: 850px) {
-		min-width: 55vw;
+	@media screen and (min-width: 360px) and (max-width: 765px) {
 	}
 `;
 
@@ -150,7 +149,7 @@ const SideBarContainer = styled(motion.div)`
 	align-items: center;
 	justify-content: space-evenly;
 	box-shadow: 2px 0px 4px 1px hsla(236, 63%, 33%, 0.37);
-	@media (max-width: 850px) {
+	@media screen and (min-width: 360px) and (max-width: 765px) {
 		min-width: 15%;
 		div:last-child {
 			display: none;
@@ -178,7 +177,11 @@ const TechList = styled.div`
 		border: none;
 		border-radius: 10px;
 	}
-	@media (max-width: 850px) {
+	@media screen and (min-width: 360px) and (max-width: 765px) {
+		text-align: center;
+		h2 {
+			margin: 1.5rem 0.5rem;
+		}
 		hr {
 			display: none;
 		}
@@ -194,13 +197,13 @@ const Featured = styled.div`
 
 const ProjectList = styled(motion.div)`
 	max-height: 25rem;
-	width: 52rem;
+	min-width: 52rem;
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
-	@media (max-width: 850px) {
-		max-height: 47rem;
-		max-width: 32rem;
-		margin: 0 1rem;
+	@media screen and (min-width: 360px) and (max-width: 765px) {
+		min-height: 70vh;
+		min-width: 15rem;
+		margin: 0 0.25rem;
 	}
 `;

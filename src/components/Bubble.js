@@ -204,7 +204,7 @@ const Circles = styled.div`
 	height: ${(props) => props.width || '80px'};
 	z-index: 1;
 	border-radius: 50%;
-	background-color: ${color.primary};
+	background-color: ${color.bubble};
 	animation: ${(props) => props.duration || 'animate 20s linear infinite;'};
 	animation-delay: ${(props) => props.delay || '5s'};
 	box-shadow: ${(props) =>

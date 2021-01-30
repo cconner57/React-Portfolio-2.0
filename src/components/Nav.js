@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { FileText } from 'phosphor-react';
-import { color, Link } from '../Styles';
+import { color, fontSize, Link } from '../Styles';
 
 const Nav = () => {
 	const [show, handleNav] = useState(false);
@@ -21,10 +21,10 @@ const Nav = () => {
 	}, []);
 
 	return (
-		<NavContainer>
+		<Container>
 			<Navbar active={show}>
 				<Logo active={show}>
-					<a href='#about'>{show ? '< CC >' : '< Chris Conner >'}</a>
+					<Link href='#about'>{show ? '< CC >' : '< Chris Conner >'}</Link>
 				</Logo>
 				<StyledLink active={show}>
 					<Link nav href='#projects'>
@@ -35,20 +35,24 @@ const Nav = () => {
 					</Link>
 					<Resume active={show}>
 						<FileText size={28} color={show ? 'black' : 'white'} />
-						<a href='/images/Chris-Conner-Resume-Online.pdf' alt='Resume'  target="_blank" rel="noopener noreferrer">
+						<Link
+							href='/images/Chris-Conner-Resume-Online.pdf'
+							alt='Resume'
+							target='_blank'
+							rel='noopener noreferrer'>
 							RESUME
-						</a>
+						</Link>
 					</Resume>
 				</StyledLink>
 			</Navbar>
-		</NavContainer>
+		</Container>
 	);
 };
 
-const NavContainer = styled.nav`
+const Container = styled.nav`
 	display: flex;
 	justify-content: center;
-	
+	min-width: 100vw;
 `;
 
 const Navbar = styled.div`
@@ -60,10 +64,12 @@ const Navbar = styled.div`
 	min-height: 10vh;
 	align-items: center;
 	justify-content: space-around;
-	background: hsl(203, 100%, 50%);
+	background: ${color.primary};
 	box-shadow: 0 0.5rem 2rem 0 hsla(236, 63%, 32%, 0.37);
-	font-family: 'Roboto', sans-serif;
 	transition: all ease 1s;
+	@media (min-width: 360px) and (max-width: 430px) {
+		justify-content: center;
+	}
 	@media (min-width: 1200px) {
 		justify-content: space-around;
 	}
@@ -71,12 +77,16 @@ const Navbar = styled.div`
 		active &&
 		`
 		min-height: 8vh;
-		min-width: max(530px, 60vw);
+		min-width: 60vw;
 		margin: 1.5rem 0 0;
 		border-radius: 15px;
 		background: hsla(200, 100%, 85%, .5);
 		backdrop-filter: blur( 7px );
 		-webkit-backdrop-filter: blur( 7px );
+		@media (min-width: 360px) and (max-width: 430px) {
+			min-width: 100vw;
+			margin: 0;
+		}
 		@media (max-width: 850px) {
 			a {
 				margin-left: 1rem;
@@ -98,11 +108,9 @@ const Logo = styled.div`
 			margin: 0;
 		}
 	`}
-	a {
-		font-size: clamp(1.5rem, 2vw, 2.25rem);
-		color: ${color.altText};
+	${Link} {
+		font-size: ${fontSize.logo};
 		font-family: 'Nanum Gothic', sans-serif;
-		text-decoration: none;
 		transition: all ease 0.25s;
 		${({ active }) =>
 			active &&
@@ -116,20 +124,25 @@ const StyledLink = styled.div`
 	display: flex;
 	justify-content: space-between;
 	min-width: 30vw;
-	a {
-		font-size: clamp(1.15rem, 2vw, 2rem);
-		text-decoration: none;
+	${({ active }) =>
+		active &&
+		`
+		min-width: 40vw;
+		@media (max-width: 850px) {
+			width: 60vw;
+			justify-content: space-evenly;
+		}
+	`}
+	${Link} {
 		font-family: 'Nanum Gothic', sans-serif;
-		color: ${color.altText};
-		transition: all ease 0.5s;
+		transition: color ease 0.5s;
 		${({ active }) =>
 			active &&
 			`
 			color: ${color.text};
 		`}
 	}
-	a:hover {
-		color: hsla(0, 0%, 90%, 0.5);
+	${Link}:hover {
 		margin-bottom: -7px;
 		border-bottom: 7px solid ${color.altText};
 		${({ active }) =>
@@ -140,15 +153,11 @@ const StyledLink = styled.div`
 			border-bottom: 7px solid ${color.text};
 		`}
 	}
-	${({ active }) =>
-		active &&
-		`
-		min-width: 40vw;
-		@media (max-width: 850px) {
-			width: 60vw;
-			justify-content: space-evenly;
+	@media (min-width: 360px) and (max-width: 430px) {
+		${Link} {
+			margin-left: 0.5rem;
 		}
-	`}
+	}
 	@media (max-width: 1200px) {
 		min-width: 50vw;
 		padding: 0 0.5rem;
@@ -159,23 +168,32 @@ const Resume = styled(StyledLink)`
 	min-width: 1vw;
 	cursor: pointer;
 	align-items: center;
-	a {
+	${Link} {
 		margin-left: 0.5rem;
+	}
+	${({ active }) =>
+		active &&
+		`
+		margin-right: 3rem;
+		@media (min-width: 360px) and (max-width: 430px) {
+			margin: 0;
+			min-width: 25vw;
+		}
+		@media (max-width: 850px) {
+			margin: 0;
+			max-width: 15vw;
+		}
+		`}
+	@media (min-width: 360px) and (max-width: 430px) {
+		${Link} {
+			margin: 0;
+		}
 	}
 	@media (max-width: 1200px) {
 		svg {
 			display: none;
 		}
 	}
-	${({ active }) =>
-		active &&
-		`
-		margin-right: 3rem;
-		@media (max-width: 850px) {
-			margin: 0;
-			max-width: 15vw;
-		}
-	`}
 `;
 
 export default Nav;

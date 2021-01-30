@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { scrollReveal } from '../animations';
 import { useScroll } from '../components/UseScroll';
-import { color } from '../Styles';
+import { color, fontSize } from '../Styles';
 import {
 	User,
 	EnvelopeSimple,
@@ -161,7 +161,7 @@ const ContactContainer = styled(motion.div)`
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
-	@media (max-width: 850px) {
+	@media screen and (min-width: 360px) and (max-width: 765px) {
 		justify-content: center;
 	}
 `;
@@ -197,9 +197,6 @@ const Contact = styled(Glass)`
 			padding: 0.5rem;
 			svg {
 				margin: 2.5rem 0.15rem 0 0.5rem;
-				@media (max-width: 850px) {
-					display: none;
-				}
 			}
 		}
 		button {
@@ -226,6 +223,19 @@ const Contact = styled(Glass)`
 			box-shadow: inset 20px 20px 60px hsl(199, 68%, 43%),
 				inset -20px -20px 60px hsl(190, 100%, 44%);
 			cursor: pointer;
+		}
+	}
+	@media screen and (min-width: 360px) and (max-width: 765px) {
+		margin: 0;
+		form {
+			min-width: 10vw;
+			h1 {
+				margin-top: 1rem;
+				font-size: 3rem;
+			}
+			svg {
+				display: none;
+			}
 		}
 	}
 `;
@@ -264,6 +274,11 @@ const FormInput = styled.div`
 		margin: 0.5rem 0;
 		font-size: 1.5rem;
 		color: ${color.error};
+	}
+	@media screen and (min-width: 360px) and (max-width: 765px) {
+		input, textarea {
+			min-width: 10rem;
+		}
 	}
 `;
 

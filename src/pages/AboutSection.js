@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { scrollReveal } from '../animations';
 import { useScroll } from '../components/UseScroll';
-import { color } from '../Styles';
+import { color, fontSize } from '../Styles';
 
 const LandingSection = () => {
 	const [colors, setColors] = useState('#7209b7');
@@ -61,8 +61,8 @@ const LandingSection = () => {
 					</Introduction>
 				</IntroGlass>
 			</Container>
-				{isClicked && <Sun />}
-				<Wave isClicked={isClicked} />
+			{isClicked && <Sun />}
+			<Wave isClicked={isClicked} />
 		</>
 	);
 };
@@ -75,25 +75,15 @@ const Container = styled(motion.div)`
 	justify-content: center;
 	align-items: center;
 	z-index: 5;
-	font-family: 'Roboto', Arial, Helvetica, sans-serif;;
-	@media screen and (max-width: 767px) {
-	}
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
-	}
-	@media screen and (min-width: 1024px) {
-	}
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 `;
 
 const IntroGlass = styled(Glass)`
 	min-width: 45vw;
 	min-height: 45vh;
 	z-index: 2;
-	@media screen and (max-width: 767px) {
-		min-height: 40vh;
-	}
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
-	}
-	@media screen and (min-width: 1024px) {
+	@media (min-width: 360px) and (max-width: 765px) {
+		min-height: 50vh;
 	}
 `;
 
@@ -101,27 +91,31 @@ const Introduction = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
-	@media (max-width: 850px) {
+	@media (min-width: 360px) and (max-width: 765px) {
 		flex-direction: column;
 	}
 	.name {
 		width: 20rem;
-		display: flex;
 		height: 20rem;
+		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		text-align: center;
 		align-items: center;
 		h1 {
 			margin-top: 3rem;
-			font-size: 3.75em;
+			font-size: ${fontSize.h1};
 			user-select: none;
 			-webkit-user-select: none;
 		}
-		@media (max-width: 850px) {
-			height: 15rem;
+		@media (min-width: 360px) and (max-width: 765px) {
+			width: 15rem;
+			height: 13rem;
 			h1 {
 				margin: 0;
+			}
+			svg {
+				display: none;
 			}
 		}
 	}
@@ -131,7 +125,7 @@ const Introduction = styled.div`
 		border-radius: 10px;
 		background: hsl(199, 100%, 62%);
 		box-shadow: 0 15px 20px 0 rgba(31, 38, 135, 0.37);
-		@media (max-width: 850px) {
+		@media (min-width: 360px) and (max-width: 765px) {
 			display: none;
 		}
 	}
@@ -146,13 +140,16 @@ const Introduction = styled.div`
 			width: 20rem;
 			height: 13rem;
 			padding: 0 1.5rem;
-			font-size: clamp(1.5rem, 1.5vw, 2rem);
+			font-size: ${fontSize.h2};
 			user-select: none;
 		}
-		@media (max-width: 850px) {
+		@media (min-width: 360px) and (max-width: 765px) {
 			height: 6rem;
 			margin-top: 1rem;
 			h2 {
+				display: none;
+			}
+			svg {
 				display: none;
 			}
 		}
@@ -169,7 +166,7 @@ const Introduction = styled.div`
 		text-shadow: 3px -2px 2px hsla(0, 0%, 0%, 0.25);
 	}
 	.function {
-		color: white;
+		color: ${color.altText};
 		font-size: 2rem;
 		font-family: 'Audiowide', cursive;
 		cursor: pointer;

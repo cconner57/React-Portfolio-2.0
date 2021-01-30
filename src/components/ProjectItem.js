@@ -9,9 +9,7 @@ import { CaretCircleDown, CaretCircleUp } from 'phosphor-react';
 const ProjectItem = ({ name, language, live, github }) => {
 	const [open, setOpen] = useState(false);
 	return (
-		<Project
-			isOpen={open}
-			onClick={() => setOpen(!open)}>
+		<Project isOpen={open} onClick={() => setOpen(!open)}>
 			<h3>{name}</h3>
 			<InfoPill>
 				{language &&
@@ -81,10 +79,14 @@ const Project = styled(motion.div)`
 		margin-left: auto;
 		margin-right: 1rem;
 	}
-	@media (max-width: 850px) {
-		max-width: 30rem;
-		min-height: 3rem;
+	@media screen and (min-width: 360px) and (max-width: 765px) {
+		min-width: 5rem;
+		min-height: 5rem;
 		cursor: unset;
+		h3 {
+			text-align: center;
+			min-width: 14rem;
+		}
 		h3 + div {
 			display: none;
 		}
@@ -115,7 +117,7 @@ const ProjectLink = styled.div`
 		border-radius: 10px;
 		color: hsl(0, 0%, 50%);
 	}
-	@media (max-width: 850px) {
-		min-width: 50%;
+	@media screen and (min-width: 360px) and (max-width: 765px) {
+		min-width: 100%;
 	}
 `;

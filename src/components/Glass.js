@@ -16,7 +16,7 @@ const GlassContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background: hsla(200, 23%, 97%, 0.5);
+	background: ${color.glass};
 	box-shadow: ${color.boxShadow};
 	border-radius: 10px;
 `;
