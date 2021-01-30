@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { scrollReveal } from '../animations';
 import { useScroll } from '../components/UseScroll';
-import { color, fontSize } from '../Styles';
+import { color } from '../Styles';
 import {
 	User,
 	EnvelopeSimple,
