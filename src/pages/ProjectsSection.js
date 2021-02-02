@@ -168,13 +168,13 @@ const TechList = styled.div`
 	h2 {
 		color: black;
 		font-size: clamp(2rem, 2.5vw, 3rem);
-		margin: 1.5rem 0;
+		margin: 1rem 0 1.5rem;
 		user-select: none;
 	}
 	hr {
 		width: 35rem;
 		height: 5px;
-		margin: 1rem 0;
+		margin: 1.5rem 0;
 		background: hsla(0, 0%, 0%, 0.5);
 		border: none;
 		border-radius: 10px;

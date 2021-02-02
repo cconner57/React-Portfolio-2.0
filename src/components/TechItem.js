@@ -51,8 +51,8 @@ const TechItemContainer = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	height: 17rem;
-	width: 13rem;
+	height: 15rem;
+	width: 12.5rem;
 	border-radius: 10px;
 	box-shadow: 2px 2px 4px 1px hsla(236, 63%, 33%, 0.37);
 	overflow: hidden;
