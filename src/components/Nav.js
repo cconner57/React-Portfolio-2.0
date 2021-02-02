@@ -70,9 +70,9 @@ const Navbar = styled.div`
 	@media (min-width: 360px) and (max-width: 430px) {
 		justify-content: center;
 	}
-	@media (min-width: 1200px) {
+	/* @media (min-width: 1200px) {
 		justify-content: space-around;
-	}
+	} */
 	${({ active }) =>
 		active &&
 		`
@@ -123,7 +123,7 @@ const Logo = styled.div`
 const StyledLink = styled.div`
 	display: flex;
 	justify-content: space-between;
-	min-width: 30vw;
+	min-width: 45vw;
 	${({ active }) =>
 		active &&
 		`
@@ -134,7 +134,6 @@ const StyledLink = styled.div`
 		}
 	`}
 	${Link} {
-		font-family: 'Nanum Gothic', sans-serif;
 		transition: color ease 0.5s;
 		${({ active }) =>
 			active &&

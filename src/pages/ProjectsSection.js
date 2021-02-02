@@ -130,8 +130,8 @@ const TechContainer = styled.div`
 `;
 
 const Technology = styled(Glass)`
-	min-height: 85vh;
-	min-width: 70vw;
+	height: 80vh;
+	width: 80vw;
 	display: flex;
 	flex-direction: row;
 	border-radius: 10px;
@@ -141,7 +141,9 @@ const Technology = styled(Glass)`
 
 const SideBarContainer = styled(motion.div)`
 	min-height: auto;
-	min-width: 30%;
+	min-width: 25%;
+	max-width: 25%;
+	padding: .5rem 0;
 	background-color: hsla(200, 23%, 98%, 0.9);
 	border-radius: 10px 0 0 10px;
 	display: flex;
@@ -165,14 +167,14 @@ const TechList = styled.div`
 	align-items: center;
 	h2 {
 		color: black;
-		font-size: 3rem;
+		font-size: clamp(2rem, 2.5vw, 3rem);
 		margin: 1.5rem 0;
 		user-select: none;
 	}
 	hr {
 		width: 35rem;
 		height: 5px;
-		margin: 2.5rem 0;
+		margin: 1rem 0;
 		background: hsla(0, 0%, 0%, 0.5);
 		border: none;
 		border-radius: 10px;
@@ -186,24 +188,41 @@ const TechList = styled.div`
 			display: none;
 		}
 	}
+	@media (max-width: 1149px) {
+		hr {
+			display: none;
+		}
+	}
 `;
 
 const Featured = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
-	min-width: 90%;
+	width: 55vw;
+	@media (max-width: 1149px) {
+		div {
+			display: none;
+		}
+	}
+	@media (min-width: 1150px) and (max-width: 1250px) {
+		justify-content: space-between;
+	}
 `;
 
 const ProjectList = styled(motion.div)`
 	max-height: 25rem;
-	min-width: 52rem;
+	min-width: 50vw;
+	margin-bottom: 1rem;
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
 	@media screen and (min-width: 360px) and (max-width: 765px) {
-		min-height: 70vh;
+		min-height: 68vh;
 		min-width: 15rem;
 		margin: 0 0.25rem;
+	}
+	@media (min-width: 766px) and (max-width: 1149px) {
+		max-height: 35rem;
 	}
 `;

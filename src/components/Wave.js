@@ -42,10 +42,10 @@ const InvertedWave = styled.div`
 	position: relative;
 	div {
 		position: absolute;
-		top: 0;
+		top: -1;
 		left: 0;
 		width: 100%;
-		height: 300px;
+		height: 350px;
 		background: url(${TopWave}) no-repeat;
 	}
 `;

@@ -49,9 +49,11 @@ export default ProjectItem;
 const Project = styled(motion.div)`
 	display: flex;
 	flex-wrap: wrap;
+	position: relative;
 	align-items: ${(props) => props.isOpen || 'center'};
-	max-height: ${(props) => (props.isOpen ? '5rem' : '3rem')};
-	min-height: ${(props) => (props.isOpen ? '5rem' : '3rem')};
+	max-height: ${(props) => (props.isOpen ? '6rem' : '2rem')};
+	min-height: ${(props) => (props.isOpen ? '6rem' : '2rem')};
+	min-width: 55vw;
 	margin: 5px 1rem;
 	padding: 3px;
 	border-radius: 5px;
@@ -64,10 +66,13 @@ const Project = styled(motion.div)`
 		box-shadow: 2px 2px 5px 3px hsla(0, 0%, 0%, 0.6);
 	}
 	h3 {
-		min-width: 12rem;
+		height: 25px;
+		width: 300px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		font-size: 1.3rem;
 		margin: 1px 1rem;
-		padding-top: ${(props) => props.isOpen && '5px'};
 		user-select: none;
 	}
 	h4 {
@@ -76,6 +81,10 @@ const Project = styled(motion.div)`
 		user-select: none;
 	}
 	svg {
+		position: absolute;
+		background-color: hsl(0,0%,100%);
+		top: 2px;
+		right: -10px;
 		margin-left: auto;
 		margin-right: 1rem;
 	}
@@ -86,6 +95,7 @@ const Project = styled(motion.div)`
 		h3 {
 			text-align: center;
 			min-width: 14rem;
+			margin: 0 auto;
 		}
 		h3 + div {
 			display: none;

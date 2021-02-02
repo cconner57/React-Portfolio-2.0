@@ -64,6 +64,27 @@ export const ProjectState = [
 	{
 		React: [
 			{
+				name: 'IP Address Tracker',
+				image: 'ip-tracker.jpg',
+				language: ['React', 'SCSS', 'Leaflet'],
+				live: 'https://ip-address-tracker3.netlify.app',
+				github: 'https://github.com/cconner57/IP-Address-Tracker',
+			},
+			{
+				name: 'FAQ Accordian Card',
+				image: 'accordian-card.jpg',
+				language: ['React', 'Styled Components'],
+				live: null,
+				github: 'https://github.com/cconner57/React-FAQ-Accordian-Card',
+			},
+			{
+				name: 'Interactive Pricing Component',
+				image: 'pricing-component.jpg',
+				language: ['React', 'Styled Components'],
+				live: null,
+				github: 'https://github.com/cconner57/React-Interactive-Pricing-Component',
+			},
+			{
 				name: 'Travel Buddy',
 				image: 'travel-buddy.jpeg',
 				language: ['React', 'Redux', 'Express', 'PostgreSQL'],
@@ -85,7 +106,7 @@ export const ProjectState = [
 			},
 			{
 				name: 'Photography Site',
-				image: '*',
+				image: null,
 				language: ['React', 'Styled Components', 'Framer Motion'],
 				github: 'https://github.com/cconner57/React-Photography-Site',
 			},

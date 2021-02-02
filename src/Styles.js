@@ -12,7 +12,7 @@ export const color = {
 	boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
 };
 
-// @media screen and (min-width: 360px) and (max-width: 765px) {			
+// @media screen and (min-width: 360px) and (max-width: 765px) {
 // }
 // @media screen and (min-width: 766px) and (max-width: 1023px) {
 // }
@@ -21,6 +21,7 @@ export const color = {
 
 export const fontSize = {
 	logo: 'clamp(.9rem, 2vw, 2.25rem)',
+	title: 'clamp(1.5rem, 3vw, 4rem)',
 	a: 'clamp(.9rem, 2vw, 2rem)',
 	p: '',
 	h1: 'clamp(3rem,2vw,3.75rem)',

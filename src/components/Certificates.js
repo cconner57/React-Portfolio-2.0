@@ -42,7 +42,6 @@ const Certificates = ({ modalHandler }) => {
 	return (
 		<Container>
 			<h2>Certificates</h2>
-			<AnimatePresence>
 				<motion.img
 					key={slide}
 					height='180'
@@ -52,9 +51,7 @@ const Certificates = ({ modalHandler }) => {
 					alt={certs[slide]}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
 				/>
-			</AnimatePresence>
 			<CaretLeft
 				className='leftArrow'
 				size={45}
@@ -73,7 +70,7 @@ export default Certificates;
 
 const Container = styled.div`
 	position: relative;
-	max-width: 21rem;
+	width: 90%;
 	max-height: 17.5rem;
 	border-radius: 10px;
 	padding: 3px 7px;
@@ -85,8 +82,8 @@ const Container = styled.div`
 		letter-spacing: 0.5px;
 	}
 	img {
-		min-width: 12rem;
-		max-height: 15rem;
+		width: 100%;
+		height: 90%;
 		cursor: pointer;
 	}
 	.leftArrow {
@@ -98,7 +95,7 @@ const Container = styled.div`
 	.leftArrow,
 	.rightArrow {
 		position: absolute;
-		top: 7rem;
+		top: 40%;
 		cursor: pointer;
 		border-radius: 50%;
 		transition: all 0.1s ease-in-out;

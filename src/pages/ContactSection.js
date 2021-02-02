@@ -171,8 +171,8 @@ const Contact = styled(Glass)`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 70vh;
-	margin: 10vh auto;
+	max-height: 80vh;
+	margin: 5vh auto;
 	z-index: 4;
 	backdrop-filter: blur(7px);
 	-webkit-backdrop-filter: blur(7px);
@@ -182,10 +182,10 @@ const Contact = styled(Glass)`
 		justify-content: center;
 		align-items: center;
 		min-width: 30vw;
+		min-height: 80vh;
 		margin: 0 2rem;
 		h1 {
 			font-size: 4rem;
-			margin: 1.5rem 0 0.75rem;
 			color: ${color.altText};
 			text-shadow: 2px -2px 6px hsla(0, 0%, 0%, 0.5);
 		}
@@ -193,7 +193,7 @@ const Contact = styled(Glass)`
 			display: flex;
 			border-radius: 10px;
 			background-color: hsla(200, 23%, 97%, 0.5);
-			margin: 0.5rem 0;
+			margin: 0.45rem 0;
 			padding: 0.5rem;
 			svg {
 				margin: 2.5rem 0.15rem 0 0.5rem;
@@ -226,12 +226,11 @@ const Contact = styled(Glass)`
 		}
 	}
 	@media screen and (min-width: 360px) and (max-width: 765px) {
-		margin: 0;
+		margin: 10vh auto 0;
 		form {
-			min-width: 10vw;
 			h1 {
-				margin-top: 1rem;
-				font-size: 3rem;
+				margin: 1rem 0;
+				font-size: clamp(2rem, 1vw, 3rem);
 			}
 			svg {
 				display: none;
@@ -244,13 +243,12 @@ const FormInput = styled.div`
 	display: flex;
 	position: relative;
 	flex-direction: column;
-	padding: 0 1rem 0 0;
 	label {
-		font-size: 1.5rem;
+		font-size: clamp(1rem, 2vw, 1.25rem);
 		user-select: none;
 	}
 	input {
-		font-size: 1.5rem;
+		font-size: clamp(1rem, 2vw, 1.25rem);
 		border: none;
 		border-bottom: 2px solid black;
 		min-width: 30rem;
@@ -258,12 +256,12 @@ const FormInput = styled.div`
 		background: none;
 	}
 	textarea {
-		font-size: 1.5rem;
+		font-size: clamp(1rem, 2vw, 1.25rem);
 		resize: none;
 		border: none;
 		border-bottom: 2px solid black;
 		min-width: 30rem;
-		min-height: 10rem;
+		min-height: 8rem;
 		padding: 0.5rem;
 		background: none;
 	}
@@ -277,7 +275,7 @@ const FormInput = styled.div`
 	}
 	@media screen and (min-width: 360px) and (max-width: 765px) {
 		input, textarea {
-			min-width: 10rem;
+			min-width: 70vw;
 		}
 	}
 `;

@@ -33,7 +33,7 @@ export default SideBarItem;
 const BarItem = styled(motion.div)`
 	display: flex;
 	align-items: center;
-	width: 80%;
+	width: 90%;
 	border-radius: 10px;
 	padding: 7px 7px 7px 1.5rem;
 	color: ${(props) => props.color || 'black'};
@@ -44,7 +44,11 @@ const BarItem = styled(motion.div)`
 		user-select: none;
 	}
 	h2 {
-		font-size: clamp(1.15rem, 1.05vw, 1.4rem);
+		width: 180px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-size: clamp(0.25rem, 1vw, 1rem);
 		margin-left: 0.75rem;
 		user-select: none;
 		transition: color 0.1s ease;

@@ -52,7 +52,7 @@ const TechItemContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	height: 17rem;
-	max-width: 16rem;
+	width: 13rem;
 	border-radius: 10px;
 	box-shadow: 2px 2px 4px 1px hsla(236, 63%, 33%, 0.37);
 	overflow: hidden;

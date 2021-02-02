@@ -15,14 +15,14 @@ const PillList = styled.div`
 	div {
 		border: 10px;
 		margin: 3px;
-		padding: 2px 7px;
+		padding: 2px 5px;
 		border-radius: 15px;
 		color: white;
 		text-shadow: 0px -1px 2px hsla(0, 0%, 0%, 0.5);
 		background: hsl(204, 100%, 50%);
 		user-select: none;
 		h4 {
-			font-size: 1rem;
+			font-size: clamp(.75rem, 1vw, 1rem);
 			user-select: none;
 		}
 	}

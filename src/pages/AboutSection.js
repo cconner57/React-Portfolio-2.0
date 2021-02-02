@@ -83,7 +83,7 @@ const IntroGlass = styled(Glass)`
 	min-height: 45vh;
 	z-index: 2;
 	@media (min-width: 360px) and (max-width: 765px) {
-		min-height: 50vh;
+		max-height: 50vh;
 	}
 `;
 
@@ -103,6 +103,7 @@ const Introduction = styled.div`
 		text-align: center;
 		align-items: center;
 		h1 {
+			max-width: 10rem;
 			margin-top: 3rem;
 			font-size: ${fontSize.h1};
 			user-select: none;
@@ -139,7 +140,7 @@ const Introduction = styled.div`
 		h2 {
 			width: 20rem;
 			height: 13rem;
-			padding: 0 1.5rem;
+			padding: 1.5rem 2.5rem 0;
 			font-size: ${fontSize.h2};
 			user-select: none;
 		}
