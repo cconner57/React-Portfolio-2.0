@@ -8,6 +8,7 @@ const certs = [
 	'AWS.jpg',
 	'20-javascript-projects.jpg',
 	'50-javascript-projects.jpg',
+	'mern-ecommerce.jpg',
 	'modern-javascript-beginning.jpg',
 	'modern-javascript-bootcamp.jpg',
 	'modern-react-bootcamp.jpg',
@@ -42,16 +43,16 @@ const Certificates = ({ modalHandler }) => {
 	return (
 		<Container>
 			<h2>Certificates</h2>
-				<motion.img
-					key={slide}
-					height='180'
-					width='240'
-					onClick={() => modalHandler(certs[slide])}
-					src={process.env.PUBLIC_URL + `/images/certificates/${certs[slide]}`}
-					alt={certs[slide]}
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-				/>
+			<motion.img
+				key={slide}
+				height='180'
+				width='240'
+				onClick={() => modalHandler(certs[slide])}
+				src={process.env.PUBLIC_URL + `/images/certificates/${certs[slide]}`}
+				alt={certs[slide]}
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+			/>
 			<CaretLeft
 				className='leftArrow'
 				size={45}
