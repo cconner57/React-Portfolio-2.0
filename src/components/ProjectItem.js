@@ -53,9 +53,9 @@ const Project = styled(motion.div)`
 	align-items: ${(props) => props.isOpen || 'center'};
 	max-height: ${(props) => (props.isOpen ? '6rem' : '2rem')};
 	min-height: ${(props) => (props.isOpen ? '6rem' : '2rem')};
-	min-width: 55vw;
+	width: 58vw;
 	margin: 5px 1rem;
-	padding: 3px;
+	padding: 5px;
 	border-radius: 5px;
 	box-shadow: 2px 2px 4px 1px hsla(236, 63%, 33%, 0.37);
 	transition: all 0.25s ease-in-out;
@@ -89,7 +89,7 @@ const Project = styled(motion.div)`
 		margin-right: 1rem;
 	}
 	@media screen and (min-width: 360px) and (max-width: 765px) {
-		min-width: 5rem;
+		min-width: 61vw;
 		min-height: 5rem;
 		cursor: unset;
 		h3 {
