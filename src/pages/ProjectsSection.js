@@ -80,15 +80,15 @@ const ProjectsSection = () => {
 									github='https://github.com/cconner57/Covid-Dashboard'
 								/>
 								<TechItem
-									picture='imdb-game'
-									name='IMDB Game Clone'
+									picture='invoice'
+									name='Invoice App'
 									tech={[
 										'React',
 										'Styled Components',
 										'Framer Motion',
 										'Redux',
 									]}
-									github='https://github.com/cconner57/games-imdb-clone'
+									github='https://github.com/cconner57/React-Invoice-App'
 								/>
 							</Featured>
 							<hr />
