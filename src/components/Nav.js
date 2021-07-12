@@ -33,16 +33,6 @@ const Nav = () => {
 					<Link nav href='#contact'>
 						CONTACT
 					</Link>
-					<Resume active={show}>
-						<FileText size={28} color={show ? 'black' : 'white'} />
-						<Link
-							href='/images/Chris-Conner-Resume-Online.pdf'
-							alt='Resume'
-							target='_blank'
-							rel='noopener noreferrer'>
-							RESUME
-						</Link>
-					</Resume>
 				</StyledLink>
 			</Navbar>
 		</Container>
@@ -160,38 +150,6 @@ const StyledLink = styled.div`
 	@media (max-width: 1200px) {
 		min-width: 50vw;
 		padding: 0 0.5rem;
-	}
-`;
-
-const Resume = styled(StyledLink)`
-	min-width: 1vw;
-	cursor: pointer;
-	align-items: center;
-	${Link} {
-		margin-left: 0.5rem;
-	}
-	${({ active }) =>
-		active &&
-		`
-		margin-right: 3rem;
-		@media (min-width: 360px) and (max-width: 430px) {
-			margin: 0;
-			min-width: 25vw;
-		}
-		@media (max-width: 850px) {
-			margin: 0;
-			max-width: 15vw;
-		}
-		`}
-	@media (min-width: 360px) and (max-width: 430px) {
-		${Link} {
-			margin: 0;
-		}
-	}
-	@media (max-width: 1200px) {
-		svg {
-			display: none;
-		}
 	}
 `;
 
