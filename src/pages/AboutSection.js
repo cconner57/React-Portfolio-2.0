@@ -47,7 +47,7 @@ const LandingSection = () => {
 							<h2>
 								Front-End Developer Specializing In Developing Apps <br />
 								With <span className='style'>Style</span> <br />
-								And{' '}
+								&
 								<span
 									className='function'
 									onClick={() => setIsClicked(!isClicked)}>
