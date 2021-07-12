@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { FileText } from 'phosphor-react';
 import { color, fontSize, Link } from '../Styles';
 
 const Nav = () => {
