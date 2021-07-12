@@ -46,7 +46,7 @@ const LandingSection = () => {
 						<div className='description'>
 							<h2>
 								Front-End Developer Specializing In Developing Apps <br />
-								With <span className='style'>Style</span> <br />
+								With <span className='style'>Style</span> 
 								&
 								<span
 									className='function'
