@@ -112,11 +112,11 @@ const Logo = styled.div`
 const StyledLink = styled.div`
 	display: flex;
 	justify-content: space-between;
-	min-width: 35vw;
+	min-width: 25vw;
 	${({ active }) =>
 		active &&
 		`
-		min-width: 40vw;
+		min-width: 30vw;
 		@media (max-width: 850px) {
 			width: 60vw;
 			justify-content: space-evenly;
