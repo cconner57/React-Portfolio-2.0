@@ -1,21 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
-import { color } from '../Styles';
-
-const Button = (props) => {
-	return (
-		<SocialButton href={props.url} target='_blank' rel='noreferrer'>
-			<div className='socialLink'>
-				{props.children}
-				<p>{props.name}</p>
-			</div>
-		</SocialButton>
-	);
-};
-
-export default Button;
-
-const SocialButton = styled.a`
+.SocialButton {
 	text-decoration: none;
 	.socialLink {
 		display: flex;
@@ -37,9 +20,9 @@ const SocialButton = styled.a`
 	}
 	p {
 		font-size: 2rem;
-		color: ${color.altText};
+		color: $altText;
 	}
 	@media (max-width: 850px) {
 		max-width: 12rem;
 	}
-`;
+}

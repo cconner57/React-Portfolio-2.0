@@ -1,0 +1,19 @@
+.Circles {
+	position: absolute;
+	bottom: -200px;
+	z-index: 1;
+	border-radius: 50%;
+	background-color: $bubble;
+
+	@keyframes animate {
+		0% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-60vh);
+		}
+		100% {
+			transform: translateY(-125vh);
+		}
+	}
+}

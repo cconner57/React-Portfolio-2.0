@@ -1,0 +1,108 @@
+.Container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 5;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	.IntroGlass {
+		min-width: 45vw;
+		min-height: 45vh;
+		z-index: 2;
+		@media (min-width: 360px) and (max-width: 765px) {
+			max-height: 50vh;
+		}
+		.Introduction {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			@media (min-width: 360px) and (max-width: 765px) {
+				flex-direction: column;
+			}
+			.name {
+				width: 20rem;
+				height: 20rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				text-align: center;
+				align-items: center;
+				h1 {
+					max-width: 10rem;
+					margin-top: 3rem;
+					font-size: $h1;
+					user-select: none;
+					-webkit-user-select: none;
+				}
+				@media (min-width: 360px) and (max-width: 765px) {
+					width: 15rem;
+					height: 13rem;
+					h1 {
+						margin: 0;
+					}
+					svg {
+						display: none;
+					}
+				}
+			}
+			.bar {
+				width: 1rem;
+				height: 20rem;
+				border-radius: 10px;
+				background: hsl(199, 100%, 62%);
+				box-shadow: 0 15px 20px 0 rgba(31, 38, 135, 0.37);
+				@media (min-width: 360px) and (max-width: 765px) {
+					display: none;
+				}
+			}
+			.description {
+				width: 20rem;
+				height: 20rem;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: space-between;
+				h2 {
+					width: 20rem;
+					height: 13rem;
+					padding: 1.5rem 2.5rem 0;
+					font-size: $h2;
+					user-select: none;
+				}
+				@media (min-width: 360px) and (max-width: 765px) {
+					height: 6rem;
+					margin-top: 1rem;
+					h2 {
+						display: none;
+					}
+					svg {
+						display: none;
+					}
+				}
+			}
+			.style {
+				// color: ${(props) => props.textColor || 'black'};
+				font-family: 'Lobster', cursive;
+				font-size: 2.5rem;
+				user-select: none;
+				-webkit-user-select: none;
+				transition: color ease 1s;
+				transform: skewX(-10deg);
+				display: inline-block;
+				text-shadow: 3px -2px 2px hsla(0, 0%, 0%, 0.25);
+			}
+			.function {
+				color: $altText;
+				font-size: 2rem;
+				font-family: 'Audiowide', cursive;
+				cursor: pointer;
+				text-shadow: 2px -2px 8px hsla(0, 0%, 0%, 0.25);
+			}
+			.function:hover {
+				text-shadow: 2px -2px 8px hsla(0, 0%, 0%, 0.45);
+			}
+		}
+	}
+}
