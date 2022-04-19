@@ -18,15 +18,28 @@ const Nav = () => {
 
 	return (
 		<div className="Container">
-			<div className="Navbar" active={show}>
-				<div className="Logo" active={show}>
+			<div
+				className="Navbar"
+				// active={show}
+			>
+				<div
+					className="Logo"
+					// active={show}
+				>
 					<a href="#about">{show ? '< CC >' : '< Chris Conner >'}</a>
 				</div>
-				<div className="StyledLink" active={show}>
-					<a nav href="#projects">
+				<div
+					className="StyledLink"
+					// active={show}
+				>
+					<a
+						// nav
+						href="#projects">
 						PROJECTS
 					</a>
-					<a nav href="#contact">
+					<a
+						// nav
+						href="#contact">
 						CONTACT
 					</a>
 				</div>

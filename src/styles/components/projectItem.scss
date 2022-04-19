@@ -1,58 +1,7 @@
-import React, { useState } from 'react';
-
-import InfoPill from './InfoPill';
-
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { CaretCircleDown, CaretCircleUp } from 'phosphor-react';
-
-const ProjectItem = ({ name, language, live, github }) => {
-	const [open, setOpen] = useState(false);
-	return (
-		<Project isOpen={open} onClick={() => setOpen(!open)}>
-			<h3>{name}</h3>
-			<InfoPill>
-				{language &&
-					language.map((tech, key) => (
-						<div key={key}>
-							<h4>{tech}</h4>
-						</div>
-					))}
-			</InfoPill>
-			{open ? <CaretCircleUp size={30} /> : <CaretCircleDown size={30} />}
-			<ProjectLink>
-				{github && (
-					<a
-						href={github}
-						alt='Github Link'
-						target='_blank'
-						rel='noopener noreferrer'>
-						Github
-					</a>
-				)}
-				{live && (
-					<a
-						href={live}
-						alt='Live Site Link'
-						target='_blank'
-						rel='noopener noreferrer'>
-						Live Site
-					</a>
-				)}
-			</ProjectLink>
-		</Project>
-	);
-};
-
-export default ProjectItem;
-
-const Project = styled(motion.div)`
-	display: flex;
+.Project {
+    display: flex;
 	flex-wrap: wrap;
 	position: relative;
-	align-items: ${(props) => props.isOpen || 'center'};
-	max-height: ${(props) => (props.isOpen ? '6rem' : '2rem')};
-	min-height: ${(props) => (props.isOpen ? '6rem' : '2rem')};
 	width: 58vw;
 	margin: 5px 1rem;
 	padding: 5px;
@@ -82,7 +31,7 @@ const Project = styled(motion.div)`
 	}
 	svg {
 		position: absolute;
-		background-color: hsl(0,0%,100%);
+		background-color: hsl(0, 0%, 100%);
 		top: 2px;
 		right: -10px;
 		margin-left: auto;
@@ -104,10 +53,8 @@ const Project = styled(motion.div)`
 			display: none;
 		}
 	}
-`;
-
-const ProjectLink = styled.div`
-	display: flex;
+    .ProjectLink {
+        display: flex;
 	justify-content: center;
 	margin: 5px 0;
 	min-width: 100%;
@@ -130,4 +77,5 @@ const ProjectLink = styled.div`
 	@media screen and (min-width: 360px) and (max-width: 765px) {
 		min-width: 100%;
 	}
-`;
+    }
+}

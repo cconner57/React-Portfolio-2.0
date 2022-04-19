@@ -18,11 +18,15 @@ import {
 const ContactSection = () => {
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const [form, setForm] = useState({ name: '', email: '', message: '' });
-	const [element, controls] = useScroll();
+	// const [element, controls] = useScroll();
 
-	const { register, handleSubmit, errors } = useForm();
+	const {
+		// register,
+		handleSubmit,
+		// errors
+	} = useForm();
 
-	const handleChange = (e) => {
+	const handleChange = (e: any) => {
 		setForm({ ...form, [e.target.name]: e.target.value });
 	};
 
@@ -59,9 +63,10 @@ const ContactSection = () => {
 			className="ContactContainer"
 			id="contact"
 			variants={scrollReveal}
-			animate={controls}
-			initials="hidden"
-			ref={element}>
+			// animate={controls}
+			// initials="hidden"
+			// ref={element}
+		>
 			<SectionTitle>Contact</SectionTitle>
 			{!isSubmitted && (
 				<div className="Contact">
@@ -77,13 +82,13 @@ const ContactSection = () => {
 									id="given-name"
 									placeholder="Enter Name"
 									onChange={handleChange}
-									ref={register({
-										required: { value: true, message: '• Name is required' },
-										minLength: { value: 3, message: '• Name is too short' },
-										maxLength: { value: 30, message: '• Name is too long' },
-									})}
+									// ref={register({
+									// 	required: { value: true, message: '• Name is required' },
+									// 	minLength: { value: 3, message: '• Name is too short' },
+									// 	maxLength: { value: 30, message: '• Name is too long' },
+									// })}
 								/>
-								{errors.name && <p className="Error">{errors.name.message}</p>}
+								{/* {errors.name && <p className="Error">{errors.name.message}</p>} */}
 							</div>
 						</div>
 						<div>
@@ -96,13 +101,13 @@ const ContactSection = () => {
 									id="email"
 									placeholder="Enter Email"
 									onChange={handleChange}
-									ref={register({
-										required: true,
-										pattern:
-											/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-									})}
+									// ref={register({
+									// 	required: true,
+									// 	pattern:
+									// 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+									// })}
 								/>
-								{errors.email && <p className="Error">• Email must be valid</p>}
+								{/* {errors.email && <p className="Error">• Email must be valid</p>} */}
 							</div>
 						</div>
 						<div>
@@ -114,25 +119,26 @@ const ContactSection = () => {
 									id="message"
 									placeholder="Enter Message"
 									onChange={handleChange}
-									ref={register({
-										required: { value: true, message: '• Message is required' },
-										minLength: {
-											value: 5,
-											message: '• Message must be a minimum of 5 letters',
-										},
-										maxLength: {
-											value: 500,
-											message: '• Message must be less than 500 letters long',
-										},
-									})}></textarea>
-								{errors.message && (
+									// ref={register({
+									// 	required: { value: true, message: '• Message is required' },
+									// 	minLength: {
+									// 		value: 5,
+									// 		message: '• Message must be a minimum of 5 letters',
+									// 	},
+									// 	maxLength: {
+									// 		value: 500,
+									// 		message: '• Message must be less than 500 letters long',
+									// 	},
+									// })}
+								></textarea>
+								{/* {errors.message && (
 									<p className="Error">{errors.message.message}</p>
-								)}
+								)} */}
 							</div>
 						</div>
 						<button onClick={handleSubmit(formHandler)}>
 							Send
-							<PaperPlaneTilt size={38} color={color.altText} />
+							{/* <PaperPlaneTilt size={38} color={color.altText} /> */}
 						</button>
 					</form>
 				</div>

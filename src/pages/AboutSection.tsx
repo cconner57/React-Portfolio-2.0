@@ -28,11 +28,15 @@ const LandingSection = () => {
 				className="Container"
 				id="about"
 				variants={scrollReveal}
-				animate={controls}
-				initials="hidden"
-				ref={element}>
+				// animate={controls}
+				// initials="hidden"
+				// ref={element}
+			>
 				<div className="IntroGlass">
-					<div className="Introduction" textColor={colors}>
+					<div
+						className="Introduction"
+						// textColor={colors}
+					>
 						<div className="name">
 							<h1>Hi, I'm Chris</h1>
 							<Button

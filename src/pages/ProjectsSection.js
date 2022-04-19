@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SideBar, ProjectState } from '../projectState';
 
 import Modal from '../components/Modal';

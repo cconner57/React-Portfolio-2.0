@@ -1,0 +1,38 @@
+.Certificates {
+	position: relative;
+	width: 90%;
+	max-height: 17.5rem;
+	border-radius: 10px;
+	padding: 3px 7px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px 0 rgba(31, 38, 135, 0.37);
+	h2 {
+		text-align: center;
+		user-select: none;
+		letter-spacing: 0.5px;
+	}
+	img {
+		width: 100%;
+		height: 90%;
+		cursor: pointer;
+	}
+	.leftArrow {
+		left: 2px;
+	}
+	.rightArrow {
+		right: 2px;
+	}
+	.leftArrow,
+	.rightArrow {
+		position: absolute;
+		top: 40%;
+		cursor: pointer;
+		border-radius: 50%;
+		transition: all 0.1s ease-in-out;
+	}
+	.leftArrow:hover,
+	.rightArrow:hover {
+		background: hsla(0, 0%, 0%, 0.3);
+		border-radius: 50%;
+	}
+}
